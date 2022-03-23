@@ -182,14 +182,15 @@ viewingTable (int N, int k, vector<int> M, vector<vector<double>> X, vector<doub
         cerr << M[j] << "\t\t";
     }
     cerr << "\n";
-    
-    for (size_t count = 1; count <= 2; count++)
-    {
-        cerr << "ТЭП" << count << "\t";
-        for (size_t j = 0; j < k; j++) {
-            cerr << TEP1[j] << "\t\t";
-        }
-        cerr << "\n";
+
+    cerr << "ТЭП1" << "\t";
+    for (size_t j = 0; j < k; j++) {
+        cerr << TEP1[j] << "\t\t";
     }
     cerr << "\n";
+    cerr << "ТЭП2" << "\t";
+    for (size_t j = 0; j < k; j++) {
+        cerr << TEP2[j] << "\t\t";
+    }
+    cerr << "\n\n";
 }
