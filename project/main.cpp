@@ -115,7 +115,7 @@ getInitialData(int& N, int& k, vector<int>& M, vector<double>& a, vector<double>
             cerr << "\tg" << M[i] << ": ";
             cin >> g[i];
     }
-    cerr << "\n";
+    cerr << "\n\n";
 }
 void
 calculateTEP1 (int N, int k, vector<double> a, vector<vector<double>> X, vector<double>& TEP1)
@@ -161,8 +161,8 @@ viewingTable (int N, int k, vector<int> M, vector<vector<double>> X, vector<doub
         for (size_t i = 0; i < k; i++)
         {
             cerr << X[i][j];
-            if (M[i] == 1 && X[i][j] < 0) {
-                cerr << "\t";
+            if (M[i] == 1 && X[i][j] < 1) {
+                cerr << "   \t";
             } else {
                 cerr << "\t\t";
             }
@@ -185,12 +185,12 @@ viewingTable (int N, int k, vector<int> M, vector<vector<double>> X, vector<doub
 
     cerr << "ТЭП1" << "\t";
     for (size_t j = 0; j < k; j++) {
-        cerr << TEP1[j] << "\t\t";
+        cerr << TEP1[j] << "       \t";
     }
     cerr << "\n";
     cerr << "ТЭП2" << "\t";
     for (size_t j = 0; j < k; j++) {
-        cerr << TEP2[j] << "\t\t";
+        cerr << TEP2[j] << "       \t";
     }
     cerr << "\n\n";
 }
