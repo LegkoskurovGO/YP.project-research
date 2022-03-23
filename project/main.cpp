@@ -107,12 +107,12 @@ getInitialData(int& N, int& k, vector<int>& M, vector<double>& a, vector<double>
     }
    
     for (size_t i = 0; i < k; i++) {
-            cerr << "Введите константы для " << i + 1 << " канала: \n";
-            cerr << "\ta" << i + 1 << ": ";
+            cerr << "Введите константы для " << M[i] << " канала: \n";
+            cerr << "\ta" << M[i] << ": ";
             cin >> a[i];
-            cerr << "\tb" << i + 1 << ": ";
+            cerr << "\tb" << M[i] << ": ";
             cin >> b[i];
-            cerr << "\tg" << i + 1 << ": ";
+            cerr << "\tg" << M[i] << ": ";
             cin >> g[i];
     }
     cerr << "\n";
@@ -148,65 +148,48 @@ calculateTEP2 (int N, int k, vector<double> b, vector<double> g, vector<vector<d
 void
 viewingTable (int N, int k, vector<int> M, vector<vector<double>> X, vector<double> TEP1, vector<double> TEP2)
 {
-    cerr << "N" << "\t\t";
+    cerr << "N" << "\t";
     for (size_t i = 0; i < k; i++)
     {
-        cerr << "X" << M[i] << "\t\t\t";
+        cerr << "X" << M[i] << "\t\t";
     }
     cerr << "\n";
     
     for (size_t j = 0; j < N; j++)
     {
-        cerr << j + 1 << "\t\t";
+        cerr << j + 1 << "\t";
         for (size_t i = 0; i < k; i++)
         {
             cerr << X[i][j];
-            
-            if (M[i] == 1 && X[i][j] > 0) {
-                cerr << "\t\t";
-            }
-            else if (M[i] > 3) {
-                cerr << "\t\t\t";
-            } else if (M[i] == 2 || M[i] == 3) {
-                cerr << "\t\t";
-            } else {
+            if (M[i] == 1 && X[i][j] < 0) {
                 cerr << "\t";
+            } else {
+                cerr << "\t\t";
             }
-            
         }
         cerr << "\n";
     }
     
     for (size_t i = 0; i < k; i++)
     {
-        cerr << "-------------";
+        cerr << "----------------";
     }
     cerr << "\n";
     
-    cerr << "M" << "\t\t";
+    cerr << "M" << "\t";
     for (size_t j = 0; j < k; j++)
     {
-        cerr << M[j] << "\t\t\t";
+        cerr << M[j] << "\t\t";
     }
     cerr << "\n";
-    cerr << "ТЭП1" << "\t";
-    for (size_t j = 0; j < k; j++) {
-        cerr << TEP1[j];
-        if (M[j] > 3) {
-            cerr << "\t\t\t";
-        } else {
-            cerr << "\t\t";
+    
+    for (size_t count = 1; count <= 2; count++)
+    {
+        cerr << "ТЭП" << count << "\t";
+        for (size_t j = 0; j < k; j++) {
+            cerr << TEP1[j] << "\t\t";
         }
+        cerr << "\n";
     }
     cerr << "\n";
-    cerr << "ТЭП2" << "\t";
-    for (size_t j = 0; j < k; j++) {
-        cerr << TEP2[j];
-        if (M[j] > 3) {
-            cerr << "\t\t\t";
-        } else {
-            cerr << "\t\t";
-        }
-    }
-    cerr << "\n\n";
 }
