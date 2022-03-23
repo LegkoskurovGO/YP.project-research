@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A3BC945A27EB1733004876D1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3BC945927EB1733004876D1 /* main.cpp */; };
+		A3BC946327EB48F5004876D1 /* plant.c in Sources */ = {isa = PBXBuildFile; fileRef = A3BC946227EB48F5004876D1 /* plant.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,6 +27,8 @@
 		A3BC945627EB1733004876D1 /* project */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = project; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3BC945927EB1733004876D1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		A3BC946027EB1831004876D1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
+		A3BC946127EB48F5004876D1 /* plant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = plant.h; sourceTree = "<group>"; };
+		A3BC946227EB48F5004876D1 /* plant.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = plant.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +62,8 @@
 			isa = PBXGroup;
 			children = (
 				A3BC945927EB1733004876D1 /* main.cpp */,
+				A3BC946127EB48F5004876D1 /* plant.h */,
+				A3BC946227EB48F5004876D1 /* plant.c */,
 				A3BC946027EB1831004876D1 /* .gitignore */,
 			);
 			path = project;
@@ -122,6 +127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3BC945A27EB1733004876D1 /* main.cpp in Sources */,
+				A3BC946327EB48F5004876D1 /* plant.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
