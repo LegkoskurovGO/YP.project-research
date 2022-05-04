@@ -2,6 +2,7 @@
 #include <vector>
 #include <math.h>
 #include "plant.h"
+#include <iomanip>
 using namespace std;
 
 void getDatas (int& N, int& b, int& M, double& gmin, double& gmax, double& step);
@@ -38,10 +39,18 @@ int main() {
         g[i+1] = g[i] + step;
     }
     
-    cout << "N\t" << "g\t\t" << "TEP2\n";
+    cout << "N" << "\t\t" << "g" << "\t\t" << "TEP2" << "\n";
     for (int i = 0; i < steps; i++)
     {
-        cout << i + 1<< "\t" << g[i] << "\t\t" << result[i] << "\n";
+        cout << i + 1;
+        cout << "\t\t";
+        cout.unsetf(ios_base::fixed);
+        cout << setprecision(8);
+        cout << g[i];
+        cout << "\t\t";
+        cout << fixed << setprecision(1);
+        cout << result[i];
+        cout << "\t\n";
     }
 
     double min = result[0];
@@ -81,9 +90,9 @@ getDatas (int& N, int& b, int& M, double& gmin, double& gmax, double& step) {
     while (!correctInput && counter < 15) {
         cerr << "Введите номер канала опроса: ";
         cin >> M;
-        if (M < 1 || M > 6)
+        if (M < 0 || M > 99)
         {
-            cerr << "Введено число вне диапозона от 1 до 6\n";
+            cerr << "Введено число вне диапозона от 1 до 99\n";
             counter++;
         }
         else
