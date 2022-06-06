@@ -39,18 +39,18 @@ int main() {
         g[i+1] = g[i] + step;
     }
     
-    cout << "N" << "\t\t" << "g" << "\t\t" << "TEP2" << "\n";
+    cout << "N" << "\t" << "g" << "\t" << "TEP2" << "\n";
     for (int i = 0; i < steps; i++)
     {
         cout << i + 1;
-        cout << "\t\t";
+        cout << "\t";
         cout.unsetf(ios_base::fixed);
         cout << setprecision(8);
         cout << g[i];
-        cout << "\t\t";
+        cout << "\t";
         cout << fixed << setprecision(1);
         cout << result[i];
-        cout << "\t\n";
+        cout << "\n";
     }
 
     double min = result[0];
@@ -76,7 +76,7 @@ getDatas (int& N, int& b, int& M, double& gmin, double& gmax, double& step) {
         cin >> N;
         if (N < 0)
         {
-            cerr << "Введено не положительное число\n";
+            cerr << "Число опросов не может быть отрицательным\n";
             counter++;
         }
         else

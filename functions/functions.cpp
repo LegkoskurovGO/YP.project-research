@@ -18,7 +18,7 @@ getInitialData(int& N, int& k, vector<int>& M, vector<double>& a, vector<double>
         if(N > 0) {
             correctInput = true;
         } else {
-            std::cerr << "Введите положительное число\n";
+            std::cerr << "Число опросов не может быть отрицательным\n";
             counter++;
         }
     }
@@ -29,10 +29,10 @@ getInitialData(int& N, int& k, vector<int>& M, vector<double>& a, vector<double>
         
         cerr << "Введите число каналов опроса: ";
         cin >> k;
-        if(0 < k && k < 7) {
+        if(1 <= k && k <= 6) {
             correctInput = true;
         } else {
-            cerr << "Введите положительное число\n";
+            cerr << "Каналы опроса '1 - 6', введите данные заново\n";
             counter++;
         }
     }
@@ -53,8 +53,9 @@ getInitialData(int& N, int& k, vector<int>& M, vector<double>& a, vector<double>
         i = 0;
         while (!correctInput && i < k) {
             if (M[i] < 1 || M[i] > 6) {
-                cerr << "Введите положительные число\n";
+                cerr << "Каналы опроса \'1 - 6\', введите данные заново\n";
                 counter++;
+                i = k;
             }
             i++;
         }
@@ -105,49 +106,49 @@ calculateTEP2 (int N, int k, vector<double> b, vector<double> g, vector<vector<d
 void
 viewingTable (int N, int k, vector<int> M, vector<vector<double>> X, vector<double> TEP1, vector<double> TEP2)
 {
-    cerr << "N" << "\t";
+    cout << "N" << "\t";
     for (size_t i = 0; i < k; i++)
     {
-        cerr << "X" << M[i] << "\t\t";
+        cout << "X" << M[i] << "\t\t";
     }
-    cerr << "\n";
+    cout << "\n";
     
     for (size_t j = 0; j < N; j++)
     {
-        cerr << j + 1 << "\t";
+        cout << j + 1 << "\t";
         for (size_t i = 0; i < k; i++)
         {
-            cerr << X[i][j];
+            cout << X[i][j];
             if (M[i] == 1 && X[i][j] < 1) {
-                cerr << "   \t";
+                cout << "   \t";
             } else {
-                cerr << "\t\t";
+                cout << "\t\t";
             }
         }
-        cerr << "\n";
+        cout << "\n";
     }
     
     for (size_t i = 0; i < k; i++)
     {
-        cerr << "----------------";
+        cout << "----------------";
     }
-    cerr << "\n";
+    cout << "\n";
     
-    cerr << "M" << "\t";
+    cout << "M" << "\t";
     for (size_t j = 0; j < k; j++)
     {
-        cerr << M[j] << "\t\t";
+        cout << M[j] << "\t\t";
     }
-    cerr << "\n";
+    cout << "\n";
 
-    cerr << "ТЭП1" << "\t";
+    cout << "ТЭП1" << "\t";
     for (size_t j = 0; j < k; j++) {
-        cerr << TEP1[j] << "       \t";
+        cout << TEP1[j] << "       \t";
     }
-    cerr << "\n";
-    cerr << "ТЭП2" << "\t";
+    cout << "\n";
+    cout << "ТЭП2" << "\t";
     for (size_t j = 0; j < k; j++) {
-        cerr << TEP2[j] << "       \t";
+        cout << TEP2[j] << "       \t";
     }
-    cerr << "\n\n";
+    cout << "\n\n";
 }
